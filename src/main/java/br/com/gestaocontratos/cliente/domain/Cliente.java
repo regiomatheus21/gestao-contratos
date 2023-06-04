@@ -1,5 +1,6 @@
 package br.com.gestaocontratos.cliente.domain;
 
+import br.com.gestaocontratos.cliente.application.api.ClienteRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,6 +45,19 @@ public class Cliente {
 
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
+
+    public Cliente (ClienteRequest clienteRequest){
+        this.nome = clienteRequest.getNome();
+        this.email= clienteRequest.getEmail();
+        this.contato = clienteRequest.getContato();
+        this.sexo = clienteRequest.getSexo();
+        this.cidade = clienteRequest.getCidade();
+        this.bairro= clienteRequest.getBairro();
+        this.dataNascimento=clienteRequest.getDataNascimento();
+        this.cpf=clienteRequest.getCpf();
+        this.aceitaTermos=clienteRequest.getAceitaTermos();
+        this.dataHoraDoCadastro=LocalDateTime.now();
+    }
 
 
 
