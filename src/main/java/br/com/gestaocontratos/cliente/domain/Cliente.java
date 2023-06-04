@@ -41,7 +41,7 @@ public class Cliente {
     @Column(unique = true)
     private String cpf;
     @NotNull
-    private boolean aceitaTermos;
+    private Boolean aceitaTermos;
 
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;

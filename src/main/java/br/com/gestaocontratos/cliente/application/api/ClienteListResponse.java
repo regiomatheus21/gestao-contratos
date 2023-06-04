@@ -30,6 +30,7 @@ public class ClienteListResponse {
         this.cpf = cliente.getCpf();
         this.email = cliente.getEmail();
         this.contato= cliente.getContato();
+
     }
 }
 
