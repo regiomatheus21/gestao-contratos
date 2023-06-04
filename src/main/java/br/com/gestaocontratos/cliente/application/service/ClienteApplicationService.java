@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Log4j2
 @RequiredArgsConstructor
@@ -18,5 +20,12 @@ public class ClienteApplicationService implements ClienteService{
         Cliente cliente = clienteRepository.salva(new Cliente(clienteRequest));
         log.info("[inicia] ClienteApplicationService - criaCliente");
         return ClienteResponse.builder().idCliente(cliente.getIdCliente()).build();
+    }
+
+    @Override
+    public List<ClienteResponse> buscaTodosClientes() {
+        log.info("[inicia] ClienteApplicationService - buscaTodosClientes");
+        log.info("[finaliza] ClienteApplicationService - buscaTodosClientes");
+        return null;
     }
 }
