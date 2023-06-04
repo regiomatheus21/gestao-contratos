@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 @Log4j2
@@ -36,5 +37,15 @@ public class ClienteInfraRepository implements ClienteRepository {
         List<Cliente> todosClientes = clienteSpringDataJPARepository.findAll();
         log.info("[inicia] ClienteInfraRepository- buscaTodosCliente");
         return todosClientes;
+    }
+
+    @Override
+    public Cliente buscaClienteAtravesId(UUID idCliente) {
+        log.info("[inicia] ClienteInfraRepository- buscaClienteAtravesId");
+        Cliente cliente = clienteSpringDataJPARepository.findByIdCliente(idCliente)
+                        .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente nao encontrado"));
+        log.info("[finaliza] ClienteInfraRepository- buscaClienteAtravesId");
+
+        return cliente;
     }
 }
