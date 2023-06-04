@@ -32,6 +32,8 @@ public class Cliente {
     private String cidade;
     @NotBlank
     private String bairro;
+    @NotNull
+    private String dataNascimento;
     @Enumerated(EnumType.STRING)
     private Sexo sexo;
     @CPF

@@ -24,6 +24,8 @@ public class ClienteRequest {
     private String cidade;
     @NotBlank
     private String bairro;
+    @NotNull
+    private String dataNascimento;
     private Sexo sexo;
     @CPF
     private String cpf;
