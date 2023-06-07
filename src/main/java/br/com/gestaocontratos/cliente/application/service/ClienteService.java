@@ -1,9 +1,6 @@
 package br.com.gestaocontratos.cliente.application.service;
 
-import br.com.gestaocontratos.cliente.application.api.ClienteDetalhadoResponse;
-import br.com.gestaocontratos.cliente.application.api.ClienteListResponse;
-import br.com.gestaocontratos.cliente.application.api.ClienteRequest;
-import br.com.gestaocontratos.cliente.application.api.ClienteResponse;
+import br.com.gestaocontratos.cliente.application.api.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -17,4 +14,6 @@ public interface ClienteService {
     ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente);
 
     void deletaClientePeloId(UUID idCliente);
+
+    void alteraDadosCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest);
 }
