@@ -46,5 +46,11 @@ public class ClienteController implements ClienteApi {
         log.info("[inicia] ClienteController - deleteClientePeloId");
     }
 
+    @Override
+    public void alteraDadosCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest) {
+        log.info("[inicia] ClienteController - alteraDadosCliente");
+        log.info("[finaliza] ClienteController - alteraDadosCliente");
+    }
+
 
 }
