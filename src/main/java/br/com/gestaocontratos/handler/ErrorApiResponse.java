@@ -1,4 +1,4 @@
-package br.com.gestaocontratos.cliente.handler;
+package br.com.gestaocontratos.handler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;

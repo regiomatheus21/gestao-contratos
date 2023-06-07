@@ -2,7 +2,7 @@ package br.com.gestaocontratos.cliente.infra;
 
 import br.com.gestaocontratos.cliente.application.repository.ClienteRepository;
 import br.com.gestaocontratos.cliente.domain.Cliente;
-import br.com.gestaocontratos.cliente.handler.APIException;
+import br.com.gestaocontratos.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.dao.DataIntegrityViolationException;

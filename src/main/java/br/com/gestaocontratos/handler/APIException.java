@@ -1,4 +1,4 @@
-package br.com.gestaocontratos.cliente.handler;
+package br.com.gestaocontratos.handler;
 
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
