@@ -1,5 +1,6 @@
 package br.com.gestaocontratos.cliente.domain;
 
+import br.com.gestaocontratos.cliente.application.api.ClienteAlteracaoRequest;
 import br.com.gestaocontratos.cliente.application.api.ClienteRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -60,7 +61,13 @@ public class Cliente {
     }
 
 
+    public void altera(ClienteAlteracaoRequest clienteAlteracaoRequest) {
+        this.nome= clienteAlteracaoRequest.getNome();
+        this.cidade=clienteAlteracaoRequest.getCidade();
+        this.bairro= clienteAlteracaoRequest.getBairro();
+        this.sexo= clienteAlteracaoRequest.getSexo();
+        this.dataNascimento= clienteAlteracaoRequest.getDataNascimento();
+        this.aceitaTermos=clienteAlteracaoRequest.getAceitaTermos();
 
-
-
+    }
 }

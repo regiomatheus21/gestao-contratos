@@ -15,7 +15,7 @@ public class ClienteAlteracaoRequest {
     private String bairro;
     private Sexo sexo;
     @NotNull
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     @NotNull
     private Boolean aceitaTermos;
 }

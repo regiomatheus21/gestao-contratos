@@ -52,6 +52,9 @@ public class ClienteApplicationService implements ClienteService{
     @Override
     public void alteraDadosCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest) {
         log.info("[inicia] ClienteApplicationService - alteraDadosCliente");
+        Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
+        cliente.altera(clienteAlteracaoRequest);
+        clienteRepository.salva(cliente);
         log.info("[finaliza] ClienteApplicationService - alteraDadosCliente");
 
     }
