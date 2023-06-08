@@ -60,6 +60,10 @@ public class ContratoApplicationService implements ContratoService {
     @Override
     public void alteraContratoDoClientePeloID(UUID idCliente, UUID idContrato, ContratoAlteracaoRequest contratoAlteracaoRequest) {
         log.info("[inicia] ContratoApplicationService - alteraContratoDoClientePeloID");
+        clienteService.buscaClienteAtravesId(idCliente);
+        Contrato contrato = contratoRepository.buscarContratoPeloId(idContrato);
+        contrato.altera(contratoAlteracaoRequest);
+        contratoRepository.salvaContrato(contrato);
         log.info("[finaliza] ContratoApplicationService - alteraContratoDoClientePeloID");
 
     }

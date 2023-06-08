@@ -1,5 +1,6 @@
 package br.com.gestaocontratos.contratos.Domain;
 
+import br.com.gestaocontratos.contratos.Application.Api.ContratoAlteracaoRequest;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -42,4 +43,12 @@ public class Contrato {
         this.tipo=contratoRequest.getTipo();
         this.dataHoraCadastro= LocalDateTime.now();
     }
+   public void altera (ContratoAlteracaoRequest contratoAlteracaoRequest){
+        this.nomeContrato=contratoAlteracaoRequest.getNomeContrato();
+        this.tipo=contratoAlteracaoRequest.getTipo();
+        this.valorContrato=contratoAlteracaoRequest.getValorContrato();
+        this.dataVencimentoContrato=contratoAlteracaoRequest.getDataVencimentoContrato();
+        this.dataHoraUltimaAtualizacao=LocalDateTime.now();
+   }
+
 }
