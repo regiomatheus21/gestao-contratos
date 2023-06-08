@@ -1,6 +1,7 @@
 package br.com.gestaocontratos.contratos.Application.Service;
 
 import br.com.gestaocontratos.cliente.application.service.ClienteService;
+import br.com.gestaocontratos.cliente.domain.Cliente;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoListResponse;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoRequest;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoResponse;
@@ -40,8 +41,9 @@ public class ContratoApplicationService implements ContratoService {
     @Override
     public ContratoListResponse buscaContratoDoClienteComID(UUID idCliente, UUID idContrato) {
         log.info("[inicia] ContratoApplicationService - buscaContratoDoClienteComID");
-
+        clienteService.buscaClienteAtravesId(idCliente);
+        Contrato contrato = contratoRepository.buscarContratoPeloId(idContrato);
         log.info("[finaliza] ContratoApplicationService - buscaContratoDoClienteComID");
-        return null;
+        return new ContratoListResponse(contrato);
     }
 }

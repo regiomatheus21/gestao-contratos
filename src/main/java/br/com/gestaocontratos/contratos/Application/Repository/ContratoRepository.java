@@ -10,4 +10,6 @@ public interface ContratoRepository {
     Contrato salvaContrato(Contrato contrato);
 
     List<Contrato> buscarContratosAtravesId(UUID idCliente);
+
+    Contrato buscarContratoPeloId(UUID idContrato);
 }

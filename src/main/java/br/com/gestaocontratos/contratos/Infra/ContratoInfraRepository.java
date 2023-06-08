@@ -2,8 +2,10 @@ package br.com.gestaocontratos.contratos.Infra;
 
 import br.com.gestaocontratos.contratos.Application.Repository.ContratoRepository;
 import br.com.gestaocontratos.contratos.Domain.Contrato;
+import br.com.gestaocontratos.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -28,5 +30,14 @@ public class ContratoInfraRepository implements ContratoRepository {
         var Contratos = contratoSpringJPARepository.findByidClienteContrato(idCliente);
         log.info("[finaliza] ContratoInfraRepository -buscarContratosAtravesId");
         return Contratos;
+    }
+
+    @Override
+    public Contrato buscarContratoPeloId(UUID idContrato) {
+        log.info("[inicia] ContratoInfraRepository -buscarContratoPeloId");
+        var contrato = contratoSpringJPARepository.findById(idContrato)
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND,"Contrato não encontrado para o idContrato = "+ idContrato));
+        log.info("[finaliza] ContratoInfraRepository -buscarContratoPeloId");
+        return contrato;
     }
 }
