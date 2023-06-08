@@ -14,7 +14,7 @@ public class ContratoListResponse {
     private UUID idContrato;
     private String nomeContrato;
     private TIPO tipo;
-    private String valorContrato;
+    private Integer valorContrato;
     private String dataVencimentoContrato;
 
     public static List<ContratoListResponse> converte(List<Contrato> ContratosDoCliente){

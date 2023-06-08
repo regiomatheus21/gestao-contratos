@@ -26,8 +26,8 @@ public class Contrato {
     private String nomeContrato;
     @Enumerated(EnumType.STRING)
     private TIPO tipo;
-    @NotBlank
-    private String valorContrato;
+
+    private Integer valorContrato;
     @NotBlank
     private String dataVencimentoContrato;
 

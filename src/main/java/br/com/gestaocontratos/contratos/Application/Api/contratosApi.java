@@ -17,6 +17,9 @@ public interface contratosApi {
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     List<ContratoListResponse> getContratoDoClienteComId(@PathVariable UUID idCliente);
+    @GetMapping(value = "/{idContrato}")
+    @ResponseStatus(code = HttpStatus.OK)
+    ContratoListResponse getContratosPeloId(@PathVariable UUID idCliente,@PathVariable UUID idContrato);
 }
 
 
