@@ -46,4 +46,13 @@ public class ContratoApplicationService implements ContratoService {
         log.info("[finaliza] ContratoApplicationService - buscaContratoDoClienteComID");
         return new ContratoListResponse(contrato);
     }
+
+    @Override
+    public void deletaContratoDoClientePeloID(UUID idCliente, UUID idContrato) {
+        log.info("[inicia] ContratoApplicationService - deletaContratoDoClientePeloID");
+        clienteService.buscaClienteAtravesId(idCliente);
+        Contrato contrato = contratoRepository.buscarContratoPeloId(idContrato);
+        contratoRepository.deletaContrato(contrato);
+        log.info("[inicia] ContratoApplicationService - deletaContratoDoClientePeloID");
+    }
 }

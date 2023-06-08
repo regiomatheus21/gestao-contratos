@@ -40,4 +40,12 @@ public class ContratoInfraRepository implements ContratoRepository {
         log.info("[finaliza] ContratoInfraRepository -buscarContratoPeloId");
         return contrato;
     }
+
+    @Override
+    public void deletaContrato(Contrato contrato) {
+        log.info("[inicia] ContratoInfraRepository -deletaContrato");
+        contratoSpringJPARepository.delete(contrato);
+        log.info("[finaliza] ContratoInfraRepository -deletaContrato");
+
+    }
 }

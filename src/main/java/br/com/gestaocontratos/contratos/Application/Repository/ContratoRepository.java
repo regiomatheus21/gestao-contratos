@@ -12,4 +12,6 @@ public interface ContratoRepository {
     List<Contrato> buscarContratosAtravesId(UUID idCliente);
 
     Contrato buscarContratoPeloId(UUID idContrato);
+
+    void deletaContrato(Contrato contrato);
 }

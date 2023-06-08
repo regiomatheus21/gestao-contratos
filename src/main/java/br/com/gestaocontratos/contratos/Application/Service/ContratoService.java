@@ -13,4 +13,6 @@ public interface ContratoService {
     List<ContratoListResponse> buscarContratosAtravesDoId(UUID idCliente);
 
     ContratoListResponse buscaContratoDoClienteComID(UUID idCliente, UUID idContrato);
+
+    void deletaContratoDoClientePeloID(UUID idCliente, UUID idContrato);
 }
