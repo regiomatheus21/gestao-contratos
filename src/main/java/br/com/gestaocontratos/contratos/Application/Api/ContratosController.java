@@ -48,4 +48,10 @@ public class ContratosController implements contratosApi {
         log.info("[finaliza] ContratosController - deleteContratoAtravesDoId ");
 
     }
+
+    @Override
+    public void alteraContrato(UUID idCliente, UUID idContrato, ContratoAlteracaoRequest contratoAlteracaoRequest) {
+        log.info("[inicia] ContratosController - alteraContrato ");
+        log.info("[finaliza] ContratosController - alteraContrato ");
+    }
 }

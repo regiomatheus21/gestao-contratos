@@ -20,9 +20,14 @@ public interface contratosApi {
     @GetMapping(value = "/{idContrato}")
     @ResponseStatus(code = HttpStatus.OK)
     ContratoListResponse getContratosPeloId(@PathVariable UUID idCliente,@PathVariable UUID idContrato);
+
     @DeleteMapping(value = "/{idContrato}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deleteContratoAtravesDoId(@PathVariable UUID idCliente,@PathVariable UUID idContrato);
+    @PatchMapping(value = "/{idContrato}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void alteraContrato(@PathVariable UUID idCliente, @PathVariable UUID idContrato,
+                        @Valid @RequestBody ContratoAlteracaoRequest contratoAlteracaoRequest);
 }
 
 
