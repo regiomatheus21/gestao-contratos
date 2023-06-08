@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -19,5 +20,13 @@ public class ContratosController implements contratosApi {
         ContratoResponse contrato = contratoService.criarContrato(idCliente,contratoRequest);
         log.info("[finaliza] ContratosController - postContrato ");
         return contrato;
+    }
+
+    @Override
+    public List<ContratoListResponse> getContratoDoClienteComId(UUID idCliente) {
+        log.info("[inicia] ContratosController - getContratoDoClienteComId ");
+        log.info("[finaliza] ContratosController - getContratoDoClienteComId ");
+
+        return null;
     }
 }
