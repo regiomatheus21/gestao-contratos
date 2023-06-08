@@ -1,5 +1,6 @@
 package br.com.gestaocontratos.contratos.Domain;
 
+import br.com.gestaocontratos.contratos.Application.Api.ContratoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,14 +14,14 @@ import java.util.UUID;
 @Entity
 @Getter
 @NoArgsConstructor (access = AccessLevel.PRIVATE)
-public class contratos {
+public class Contrato {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid",name = "idContrato",updatable = false,unique = true,nullable = false)
     private UUID idContrato;
     @NotNull
     @Column(columnDefinition = "uuid",name = "idCliente",nullable = false)
-    private UUID idCliente;
+    private UUID idClienteContrato;
     @NotBlank
     private String nomeContrato;
     @Enumerated(EnumType.STRING)
@@ -32,4 +33,13 @@ public class contratos {
 
     private LocalDateTime dataHoraCadastro;
     private LocalDateTime dataHoraUltimaAtualizacao;
+
+    public Contrato (UUID idCliente, ContratoRequest contratoRequest){
+        this.idClienteContrato= idCliente;
+        this.nomeContrato= contratoRequest.getNomeContrato();
+        this.dataVencimentoContrato= contratoRequest.getDataVencimentoContrato();
+        this.valorContrato=contratoRequest.getValorContrato();
+        this.tipo=contratoRequest.getTipo();
+        this.dataHoraCadastro= LocalDateTime.now();
+    }
 }
