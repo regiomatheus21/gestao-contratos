@@ -1,5 +1,6 @@
 package br.com.gestaocontratos.contratos.Application.Service;
 
+import br.com.gestaocontratos.contratos.Application.Api.ContratoAlteracaoRequest;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoListResponse;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoRequest;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoResponse;
@@ -15,4 +16,6 @@ public interface ContratoService {
     ContratoListResponse buscaContratoDoClienteComID(UUID idCliente, UUID idContrato);
 
     void deletaContratoDoClientePeloID(UUID idCliente, UUID idContrato);
+
+    void alteraContratoDoClientePeloID(UUID idCliente, UUID idContrato, ContratoAlteracaoRequest contratoAlteracaoRequest);
 }

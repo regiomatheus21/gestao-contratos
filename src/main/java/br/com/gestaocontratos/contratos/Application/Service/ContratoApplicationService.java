@@ -2,6 +2,7 @@ package br.com.gestaocontratos.contratos.Application.Service;
 
 import br.com.gestaocontratos.cliente.application.service.ClienteService;
 import br.com.gestaocontratos.cliente.domain.Cliente;
+import br.com.gestaocontratos.contratos.Application.Api.ContratoAlteracaoRequest;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoListResponse;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoRequest;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoResponse;
@@ -54,5 +55,12 @@ public class ContratoApplicationService implements ContratoService {
         Contrato contrato = contratoRepository.buscarContratoPeloId(idContrato);
         contratoRepository.deletaContrato(contrato);
         log.info("[inicia] ContratoApplicationService - deletaContratoDoClientePeloID");
+    }
+
+    @Override
+    public void alteraContratoDoClientePeloID(UUID idCliente, UUID idContrato, ContratoAlteracaoRequest contratoAlteracaoRequest) {
+        log.info("[inicia] ContratoApplicationService - alteraContratoDoClientePeloID");
+        log.info("[finaliza] ContratoApplicationService - alteraContratoDoClientePeloID");
+
     }
 }
