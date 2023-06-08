@@ -25,8 +25,9 @@ public class ContratosController implements contratosApi {
     @Override
     public List<ContratoListResponse> getContratoDoClienteComId(UUID idCliente) {
         log.info("[inicia] ContratosController - getContratoDoClienteComId ");
+        log.info("[idCliente] {}", idCliente);
+        List<ContratoListResponse> contratosDoCliente = contratoService.buscarContratosAtravesDoId(idCliente);
         log.info("[finaliza] ContratosController - getContratoDoClienteComId ");
-
-        return null;
+        return contratosDoCliente;
     }
 }

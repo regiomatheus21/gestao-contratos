@@ -1,6 +1,7 @@
 package br.com.gestaocontratos.contratos.Application.Service;
 
 import br.com.gestaocontratos.cliente.application.service.ClienteService;
+import br.com.gestaocontratos.contratos.Application.Api.ContratoListResponse;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoRequest;
 import br.com.gestaocontratos.contratos.Application.Api.ContratoResponse;
 import br.com.gestaocontratos.contratos.Application.Repository.ContratoRepository;
@@ -9,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -24,5 +26,12 @@ public class ContratoApplicationService implements ContratoService {
         Contrato contrato = contratoRepository.salvaContrato(new Contrato(idCliente,contratoRequest));
         log.info("[finaliza] ContratoApplicationService - criarContrato");
         return new ContratoResponse(contrato.getIdContrato());
+    }
+
+    @Override
+    public List<ContratoListResponse> buscarContratosAtravesDoId(UUID idCliente) {
+        log.info("[inicia] ContratoApplicationService - buscarContratosAtravesDoId");
+        log.info("[Finaliza] ContratoApplicationService - buscarContratosAtravesDoId");
+        return null;
     }
 }
