@@ -36,4 +36,12 @@ public class ContratoApplicationService implements ContratoService {
         log.info("[Finaliza] ContratoApplicationService - buscarContratosAtravesDoId");
         return ContratoListResponse.converte(contratosDoCliente);
     }
+
+    @Override
+    public ContratoListResponse buscaContratoDoClienteComID(UUID idCliente, UUID idContrato) {
+        log.info("[inicia] ContratoApplicationService - buscaContratoDoClienteComID");
+
+        log.info("[finaliza] ContratoApplicationService - buscaContratoDoClienteComID");
+        return null;
+    }
 }

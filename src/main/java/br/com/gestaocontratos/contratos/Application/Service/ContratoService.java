@@ -11,4 +11,6 @@ public interface ContratoService {
     ContratoResponse criarContrato(UUID idCliente, ContratoRequest contratoRequest);
 
     List<ContratoListResponse> buscarContratosAtravesDoId(UUID idCliente);
+
+    ContratoListResponse buscaContratoDoClienteComID(UUID idCliente, UUID idContrato);
 }
